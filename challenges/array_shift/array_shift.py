@@ -8,6 +8,9 @@ def insertShiftArray(inArray, value):
 
     in: inArray - a list; value - a number (int or float)
     out: a new list
+
+    ***assumptions:
+    for the value, we only accept int of float input.
     """
 
     # 1. make sure the inArray is a list and value is a number
