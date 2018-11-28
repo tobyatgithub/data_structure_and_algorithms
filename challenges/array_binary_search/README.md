@@ -27,7 +27,7 @@ the input.
 
 ## Solution
 <!-- Embedded whiteboard image -->
-
+![White_board_solution](https://github.com/tobyatgithub/data_structure_and_algorithms/blob/master/assets/array_binary_search.jpg)
 
 ## API
 <!-- Provide detailed instructions for your applications usage. This should include any methods or endpoints available to the user/client/developer. Each section should be formatted to provide clear syntax for usage, example calls including input data requirements and options, and example responses or return values. -->
