@@ -1,7 +1,7 @@
 # Binary Search
 
 **Author**: Toby  
-**Version**: 1.0.0 (increment the patch/fix version number up if you make more commits past your first submission)
+**Version**: 1.0.0 
 
 ## Overview
 <!-- Short summary or background information -->
@@ -12,7 +12,7 @@ Binary search is an efficient algorithm for finding an item from a sorted list o
 To run the array_binary_search.py code on your machine, you will need python 3.6.  
 To run the test_array_binary_search.py via pytest, you will need both python 3.6 and pytest.  
 
-
+ 
 ## Challenge
 <!-- Description of the challenge -->
 Write a function called BinarySearch which takes in 2 parameters: a sorted array and the search key. Without utilizing any of the built-in methods available to your language, return the index of the array’s element that is equal to the search key, or -1 if the element does not exist.
