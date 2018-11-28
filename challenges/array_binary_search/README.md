@@ -20,10 +20,11 @@ Write a function called BinarySearch which takes in 2 parameters: a sorted array
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-Approach: I use recurrsion to realize the algorithm.
+Approach: I use recurrsion to realize the algorithm. Detail please find in the Solution session below.  
+The actually code can be found in this repository array_binary_search.py  
 The big O time shall be log(n) since each time we divide the lenght by factor of 2.
 The big O space shall be n as we don't save anything extra, so the space will be equal to
-the input.
+the input.  
 
 ## Solution
 <!-- Embedded whiteboard image -->
