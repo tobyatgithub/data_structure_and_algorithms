@@ -38,7 +38,10 @@ The main challenges here are:
 2. I used python slice to do the actual insertion
 3. used try-exception for error handling.
 
-The Big O time will be O(n), as we will need to get to the middle point and paste everything. 
+The Big O time shall be O(1), as we really just modified pointers of the lists. 
+However, when I tested it with time.time() for insertShiftArray([1,2,3],4) and insertShiftArray([1,2,3]*100000,4),
+there is a time difference as the first one takes 0.000045 seconds, and second one takes 0.000571 seconds.(???)
+
 And Big O space shall be O(1), as we don't create any new varaiable to store or handle data.
 
 
