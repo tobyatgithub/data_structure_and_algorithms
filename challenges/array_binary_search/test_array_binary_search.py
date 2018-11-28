@@ -52,4 +52,28 @@ def test_BinarySearch_hard8():
     # check exisiting case with a even length list and value is somewhere in the middle.
     assert(BinarySearch([1,5,20,40,50,60], 20) == 2)
 
+def test_stretch1():
+    # strecth test with input length = 100
+    expected = 35 # since list(range) starts from 0!
+    actual = BinarySearch(list(range(100)), 35)
+    assert(actual == expected)
 
+
+def test_stretch2():
+    # strecth test with input length = 10000
+    expected = 5526
+    actual = BinarySearch(list(range(10000)), 5526)
+    assert(actual == expected)
+
+
+def test_stretch3():
+    # strecth test with input length = 1000000
+    expected = -1
+    actual = BinarySearch(list(range(100000)), 788909)
+    assert(actual == expected)
+
+def test_stretch4():
+    # strecth test with input length = 100000000
+    expected = 788909
+    actual = BinarySearch(list(range(10000000)), 788909)
+    assert(actual == expected)
