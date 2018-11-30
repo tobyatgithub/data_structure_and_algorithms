@@ -39,6 +39,7 @@ class linked_list(object):
         input: value, can be in any type (*)
         output: update the linked list inplace. (self.head, self._size)
         """
+        # val can be any value as Node has no restriction on what data it takes in.
 
         new_node = Node(val)
         new_node._next = self.head
