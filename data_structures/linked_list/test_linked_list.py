@@ -22,6 +22,7 @@ def random_ll():
         ll.insert(randint(0,100))
     return ll
 
+# test definition
 def test_ll_module_exists():
     assert linked_list
 
@@ -29,15 +30,18 @@ def test_ll_head_is_none(empty_ll):
     assert empty_ll.head is None
 
 
+# test string method
 def test_ll_str_method(empty_ll):
     assert str(empty_ll) == f'Linked List: Head val - { empty_ll.head }'
 
+# test length
 def test_size_of_empty_ll(empty_ll):
     assert len(empty_ll) == 0
 
 def test_small_fixture_has_size_of_4(small_ll):
     assert len(small_ll) == 4
 
+# test insert
 def test_insert_new_node_into_empty(empty_ll):
     # test before
     assert empty_ll.head is None
@@ -51,10 +55,12 @@ def test_insert_new_node_into_empty(empty_ll):
 def test_random_ll(random_ll):
     assert len(random_ll) == 100
 
+# test iterable
 def test_iterable_as_argument():
     ll = linked_list([1,2,3,4])
     assert ll.head.val == 4
 
+# test includes
 def test_empty_includes(empty_ll):
     assert empty_ll.includes(233) == False
 
