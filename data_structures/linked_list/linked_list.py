@@ -152,3 +152,31 @@ class linked_list(object):
         current._next = node_to_add
         self._size += 1
         return
+
+    def delete_node(self, target_value):
+        """
+        this function removes the first node contains the given value from the linked list.
+        intput: a target_value to remove from the linked list. any datatype shall be fine (*)
+        output: None. as it changes inplace (on the self).
+        """
+        # make sure the linked list contains the value we want to remove
+        # this shall also take care of the empty input case
+        if self.includes(target_value) is False:
+            print(f'Target value { target_value } not found in the linked list.')
+            return
+
+        current = self.head
+
+        # case1, head == target value we want to remove.
+        if current.val == target_value:
+            self.head = self.head._next
+            self._size -= 1
+            return
+
+        # else cases:
+        while current._next.val != target_value:
+            current = current._next
+
+        current._next = current._next._next
+        self._size -= 1
+        return

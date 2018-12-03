@@ -168,3 +168,30 @@ def test_insertAfter3(small_ll):
     assert len(small_ll) == 6
     assert small_ll.includes(26) is True
 
+
+# test delete_node
+def test_delete_node(empty_ll):
+    empty_ll.delete_node(10)
+    assert len(empty_ll) == 0
+    assert empty_ll.includes(10) is False
+
+def test_delete_node2(small_ll):
+    #before
+    assert small_ll.includes(4) is True
+    small_ll.delete_node(4)
+
+    #after
+    assert len(small_ll) == 3
+    assert small_ll.includes(4) is False
+    assert small_ll.includes(1) is True
+
+def test_delete_node3(small_ll):
+    #before
+    assert small_ll.includes(1) is True
+    small_ll.delete_node(1)
+
+    #after
+    assert len(small_ll) == 3
+    assert small_ll.includes(1) is False
+    assert small_ll.includes(4) is True
+
