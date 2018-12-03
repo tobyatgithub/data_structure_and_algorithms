@@ -1,11 +1,11 @@
 from linked_list import linked_list
 import pytest
 
-@pytest.fixture
+@pytest.fixture(scope = "function")
 def empty_ll():
     return linked_list()
 
-@pytest.fixture
+@pytest.fixture(scope = "function")
 def small_ll():
     ll = linked_list()
     ll.insert(1)
@@ -14,7 +14,7 @@ def small_ll():
     ll.insert(4)
     return ll
 
-@pytest.fixture
+@pytest.fixture(scope = "function")
 def random_ll():
     from random import randint
     ll = linked_list()
@@ -70,3 +70,101 @@ def test_includes1(small_ll):
 
 def test_includes2(small_ll):
     assert small_ll.includes(5) == False
+
+
+# test append
+def test_append(empty_ll):
+    # empty_ll.append(2)
+    empty_ll.append(3)
+    print("empty_ll = ", empty_ll)
+    assert len(empty_ll) == 1
+    assert empty_ll.includes(3) == True
+    assert empty_ll.head._next is None
+
+def test_append1(empty_ll):
+    empty_ll.append(2)
+    empty_ll.append(3)
+    assert len(empty_ll) == 2
+    assert empty_ll.head.val == 2
+    assert empty_ll.head._next.val == 3
+    assert empty_ll.includes(3) is True
+    # fixed: can't modify self.head in includes.
+    assert empty_ll.includes(2) is True
+    assert empty_ll.head._next._next is None
+
+
+def test_append2(small_ll):
+    small_ll.append(44)
+    small_ll.append(55)
+    assert len(small_ll) == 6
+    assert small_ll.includes(44) is True
+    assert small_ll.includes(55) is True
+    assert small_ll.includes(66) is False
+
+# test insertBefore
+
+# test the edge case where we are given an empty ll,
+# insert shall not happen and ll shall remain empty
+def test_insertBefore1(empty_ll):
+    empty_ll.insertBefore(50, 1)
+    assert len(empty_ll) == 0
+    assert empty_ll.includes(50) is False
+    # assert empty_ll.head.val == 3
+
+# edge case 2, where we try to insert before the head.
+def test_insertBefore2(small_ll):
+    # before
+    assert len(small_ll) == 4
+    assert small_ll.head.val == 4
+    # due to the nature of insert. 4 is the head of small_ll
+    small_ll.insertBefore(4, 50)
+
+    # after
+    assert len(small_ll) == 5
+    assert small_ll.includes(50) is True
+    assert small_ll.head.val == 50
+
+def test_insertBefore3(small_ll):
+    # before
+    assert len(small_ll) == 4
+    assert small_ll.head.val == 4
+    # due to the nature of insert. 4 is the head of small_ll
+    small_ll.insertBefore(1, 50)
+    small_ll.insertBefore(50, 26)
+
+    # after
+    assert len(small_ll) == 6
+    assert small_ll.includes(26) is True
+
+# test insertAfter
+
+# test the edge case where we are given an empty ll,
+# insert shall not happen and ll shall remain empty
+def test_insertAfter1(empty_ll):
+    empty_ll.insertAfter(50, 1)
+    assert len(empty_ll) == 0
+    assert empty_ll.includes(50) is False
+
+# edge case 2, where we try to insert at the end.
+def test_insertAfter2(small_ll):
+    # before
+    assert len(small_ll) == 4
+    assert small_ll.head.val == 4
+    # due to the nature of insert. 1 is the end of small_ll
+    small_ll.insertAfter(1, 50)
+    # after
+    assert len(small_ll) == 5
+    assert small_ll.includes(50) is True
+    assert small_ll.head._next._next._next._next.val == 50
+
+def test_insertAfter3(small_ll):
+    # before
+    assert len(small_ll) == 4
+    assert small_ll.head.val == 4
+    #insert
+    small_ll.insertAfter(1, 50)
+    small_ll.insertAfter(50, 26)
+    # after
+    assert len(small_ll) == 6
+    assert small_ll.includes(26) is True
+

@@ -58,12 +58,97 @@ class linked_list(object):
         """
 
         # if the linked list is empty, there won't be any value
-        if self.head is None:
-            return False
-
-        while self.head is not None:
-            if target == self.head.val:
+        # notice you need to create a new varabile to point to self.head instead of
+        # modifying self.head (set self.head = self.head._next in while loop will ops
+        # the structure and make ll useless.)
+        current = self.head
+        while current:
+            if target == current.val:
                 return True
-            self.head = self.head._next
+            current = current._next
         return False
 
+
+    def append(self, value):
+        """
+        addes a new node with the given value to the end of the linked list.
+        input: a value to add into the linked list. Any datatype shall be fine. (*)
+        output: None. as it changes inplace (on the self).
+        """
+        node_to_add = Node(value)
+
+        # case 1, current ll is empty
+        if self.head is None:
+            self.head = node_to_add
+            self._size += 1
+            return
+
+        # otherwise, we traverse to the end of the linked list, and add
+        current = self.head
+        while current._next:
+            current = current._next
+        current._next = node_to_add
+        self._size += 1
+        return
+
+    def insertBefore(self, target_value, new_value):
+        """
+        this function adds a new node with the given new_value and insert it before the first
+        node with target_value.
+        input1: a target_value to look upto in the linked list. any datatype shall be fine (*)
+        input2: a new_value to add into the linked list. any datatype shall be fine (*)
+        output: None. as it changes inplace (on the self).
+        """
+        node_to_add = Node(new_value)
+
+        # make sure the linked list contains the value we want to find
+        if self.includes(target_value) is False:
+            print(f'Target value { target_value } not found in the linked list.')
+            return
+
+        current = self.head
+        # case 1, self.head.val == target_val
+        if current.val == target_value:
+            node_to_add._next = current
+            self.head = node_to_add
+            self._size += 1
+            return
+
+        # else cases:
+        while current._next.val != target_value:
+            current = current._next
+
+        node_to_add._next = current._next
+        current._next = node_to_add
+        self._size += 1
+        return
+
+
+    def insertAfter(self, target_value, new_value):
+        """
+        this function adds a new node with the given new_value and insert it after the first
+        node with target_value.
+        input1: a target_value to look upto in the linked list. any datatype shall be fine (*)
+        input2: a new_value to add into the linked list. any datatype shall be fine (*)
+        output: None. as it changes inplace (on the self).
+        """
+        node_to_add = Node(new_value)
+
+        # make sure the linked list contains the value we want to find
+        if self.includes(target_value) is False:
+            print(f'Target value { target_value } not found in the linked list.')
+            return
+
+        current = self.head
+
+        while current.val != target_value:
+            current = current._next
+
+        # case 1, if the target value is the last value in the ll
+        # the current._next shall be None and thus it shall be fine.
+
+        # else cases
+        node_to_add._next = current._next
+        current._next = node_to_add
+        self._size += 1
+        return
