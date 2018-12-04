@@ -1,6 +1,6 @@
 # linked list implementation
 
-**Author**: Toby
+**Author**: Toby  
 **Version**: 1.0.0
 
 ## Overview
