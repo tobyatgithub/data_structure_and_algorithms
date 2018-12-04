@@ -9,6 +9,7 @@ In this repository, I implement a singly linked list based on a standard node cl
 
 ## Challenge
 <!-- Description of the challenge -->
+12/4/18: read me appened at the end.
 12/3/18:  
 The class has an .append(value) function which adds a new node with the given value to the end of the list  
 The class has an .insertBefore(value, newVal) function which adds a new node with the given newValue immediately before the first value node  
@@ -64,3 +65,25 @@ No API available yet.
 11/30/18: 2pm, first edition on.  
 12/3/18: 3pm, added Linked List Insertions.
 
+
+### 12/4/18 
+# kth from the end of a Linked List
+<!-- Short summary or background information -->
+Write a method for the Linked List class which takes a number, k, as a parameter.  
+Return the node’s value that is k from the end of the linked list. 
+
+## Challenge
+<!-- Description of the challenge -->
+The main challenge here is to avoid using the size attribute in the linked list class, and try not reading the linked list twice.  
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+| Function | Big O Time | Big O Space |
+| :------ |:--- | :--- |
+| kth from end | O(n) | O(1) |
+
+
+## Solution
+<!-- Embedded whiteboard image -->
+![linkedlistkthfromend](https://github.com/tobyatgithub/data_structure_and_algorithms/blob/master/assets/IMG_9829.jpeg)
