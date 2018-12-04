@@ -180,3 +180,39 @@ class linked_list(object):
         current._next = current._next._next
         self._size -= 1
         return
+
+    def ll_kth_from_end(self, k):
+        """
+        This function takes a number, k, as a parameter. Return the node’s value
+        that is k from the end of the linked list.
+        input: k (int)
+        output: node's value of k from the end of the linked list (int)
+            or 'Exception' if k is out of range (str)
+        """
+        if not isinstance(k, int):
+            print("please input an integer k.")
+            return 'Exception'
+
+        if k < 1:
+            print("please input a positive integer k.")
+            return 'Exception'
+
+        current = self.head
+        if current is None:
+            return 'Exception'
+
+        position = self.head
+
+        # here we set position to be (k-1) from current
+        for _ in range(k-1):
+            if position._next is not None:
+                position = position._next
+            else:
+                return 'Exception'
+
+        while position._next is not None:
+            current = current._next
+            position = position._next
+
+        return current.val
+
