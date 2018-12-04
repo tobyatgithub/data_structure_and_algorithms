@@ -195,3 +195,19 @@ def test_delete_node3(small_ll):
     assert small_ll.includes(1) is False
     assert small_ll.includes(4) is True
 
+# testing ll_kth_from_end
+def test_ll_kth_from_end(empty_ll):
+    assert empty_ll.ll_kth_from_end(2) == 'Exception'
+    assert empty_ll.ll_kth_from_end(44) == 'Exception'
+
+def test_ll_kth_from_end2(small_ll):
+    # small_ll: head-4-3-2-1-x
+    assert small_ll.ll_kth_from_end(1) == 1
+    assert small_ll.ll_kth_from_end(2) == 2
+    assert small_ll.ll_kth_from_end(3) == 3
+    assert small_ll.ll_kth_from_end(4) == 4
+    assert small_ll.ll_kth_from_end(6) == 'Exception'
+
+def test_ll_kth_from_end_input(small_ll):
+    assert small_ll.ll_kth_from_end(1.2) == 'Exception'
+    assert small_ll.ll_kth_from_end(-3) == 'Exception'
