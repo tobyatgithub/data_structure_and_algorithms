@@ -45,6 +45,6 @@ No API available yet.
 ## Change Log
 <!-- Use this are to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:-->
 
-11/30/18: 2pm, first edition on.
+11/30/18: 2pm, first edition on.  
 12/3/18: 3pm, added Linked List Insertions.
 
