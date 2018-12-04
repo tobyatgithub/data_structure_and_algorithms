@@ -22,6 +22,22 @@ The linked list can take iterable as an argument and turn that iterable object i
 e.g. linked_list([1,2,3,4]) = a linked list with nodes (head)4, 3, 2, 1
 The linked list also has insert(element) function to add element into the linked list, and a includes(element) function that tells you whether the element exists in the linked list.
 
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+
+| Function | Big O Time | Big O Space |
+| :------ |:--- | :--- |
+| append | O(n) | O(1) |
+| insertBefore | O(n) | O(1) |
+| insertAfter | O(n) | O(1) |
+| delete_node | O(n) | O(1) |
+| len() | O(1) | O(1) |
+| take iterables | O(n) | O(1) |
+| insert | O(1) | O(1) |
+| includes | O(n) | O(1) |
+  
+  
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
