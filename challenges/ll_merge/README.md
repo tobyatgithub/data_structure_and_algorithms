@@ -20,4 +20,5 @@ list input, and b be the length of the second linked list input.
 
 ## Solution
 <!-- Embedded whiteboard image -->
+Here's solution for whiteboard
 ![whiteboard_ll_merge](https://github.com/tobyatgithub/data_structure_and_algorithms/blob/master/assets/ll_merge_photo.jpeg)
