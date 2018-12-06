@@ -40,14 +40,20 @@ class linked_list(object):
         output: update the linked list inplace. (self.head, self._size)
         """
         # val can be any value as Node has no restriction on what data it takes in.
-
-        new_node = Node(val)
+        # if isinstance(val, int):
+        #     new_node = Node(val)
+        if isinstance(val, Node):
+            new_node = val
+        else:
+            new_node = Node(val)
+        # new_node = val
         new_node._next = self.head
         self.head = new_node
 
         # self.head = Node(val, self.head)
 
         self._size += 1
+        # return
 
     def includes(self, target):
         """
