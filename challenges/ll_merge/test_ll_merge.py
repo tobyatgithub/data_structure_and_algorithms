@@ -17,44 +17,44 @@ def empty_ll2():
 
 @pytest.fixture(scope = "function")
 def small_ll():
-    ll = linked_list()
-    ll.insert(1)
-    ll.insert(2)
-    ll.insert(3)
-    ll.insert(4)
+    ll = linked_list([1,2,3,4][::-1])
+    # ll.insert(1)
+    # ll.insert(2)
+    # ll.insert(3)
+    # ll.insert(4)
     return ll
 
 @pytest.fixture(scope = "function")
 def small_string_ll():
-    ll = linked_list()
-    ll.insert("a")
-    ll.insert("b")
-    ll.insert("c")
-    ll.insert("d")
+    ll = linked_list(['a','b','c','d'][::-1])
+    # ll.insert("a")
+    # ll.insert("b")
+    # ll.insert("c")
+    # ll.insert("d")
     return ll
 
 @pytest.fixture(scope = "function")
 def long_ll():
-    ll = linked_list()
-    ll.insert(1)
-    ll.insert(2)
-    ll.insert(3)
-    ll.insert(4)
-    ll.insert(5)
-    ll.insert(6)
-    ll.insert(7)
+    ll = linked_list([1,2,3,4,5,6,7][::-1])
+    # ll.insert(1)
+    # ll.insert(2)
+    # ll.insert(3)
+    # ll.insert(4)
+    # ll.insert(5)
+    # ll.insert(6)
+    # ll.insert(7)
     return ll
 
 @pytest.fixture(scope = "function")
 def long_string_ll():
-    ll = linked_list()
-    ll.insert("a")
-    ll.insert("b")
-    ll.insert("c")
-    ll.insert("d")
-    ll.insert("e")
-    ll.insert("f")
-    ll.insert("g")
+    ll = linked_list(['a','b','c','d','e','f','g'][::-1])
+    # ll.insert("a")
+    # ll.insert("b")
+    # ll.insert("c")
+    # ll.insert("d")
+    # ll.insert("e")
+    # ll.insert("f")
+    # ll.insert("g")
     return ll
 
 
@@ -75,24 +75,33 @@ def test_part_empty_merge2(empty_ll2, small_ll):
     assert response == small_ll.head
 
 # test merge for input lists with equal length.
-def test_part_equal_merge1(small_ll, small_string_ll):
+def test_equal_length_merge1(small_ll, small_string_ll):
     response = mergeLists(small_ll, small_string_ll) # this returns a ref of new_ll head
     # assert response.val == small_ll.head._next._next._next.val
     # print("response  = ", response.val)
     # assert type(response) == Node
     # assert type(response.val) == int
     # assert True == True
-    assert response.val == 1
-    assert response._next.val == 'a'
-    assert response._next._next.val == 2
-
-def test_part_equal_merge2(small_ll, small_string_ll):
-    response = mergeLists(small_string_ll, small_ll) # this returns a ref of new_ll head
-    # assert response.val == small_ll.head._next._next._next.val
-    # print("response  = ", response.val)
-    # assert type(response) == Node
-    # assert type(response.val) == int
-    # assert True == True
-    assert response.val == 'a'
+    assert response.val == None
     assert response._next.val == 1
-    assert response._next._next.val == 'b'
+    assert response._next._next.val == 'a'
+
+def test_equal_length_merge2(small_ll, small_string_ll):
+    response = mergeLists(small_string_ll, small_ll) # this returns a ref of new_ll head
+    assert response.val == None
+    assert response._next.val == 'a'
+    assert response._next._next.val == 1
+    assert response._next._next._next.val == 'b'
+
+def test_diff_length_merge1(small_ll, long_ll):
+    response = mergeLists(small_ll, long_ll)
+    assert response.val == None
+    assert response._next.val == 1
+    assert response._next._next.val == 1
+
+def test_diff_length_merge2(small_ll, long_string_ll):
+    response = mergeLists(small_ll, long_string_ll)
+    assert response.val == None
+    assert response._next.val == 1
+    assert response._next._next.val == 'a'
+    assert response._next._next._next.val == 2
