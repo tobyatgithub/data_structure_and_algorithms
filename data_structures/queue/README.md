@@ -5,7 +5,10 @@
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for a Code Fellows 401 class. (i.e. What's your problem domain?) -->
-In this repository, I implement a queue class based on a standard node class.
+In this repository, I implement a queue class based on a standard node class.  
+One huge advantage and reason to use queue is its amazing efficiency (constent big O) when coming to add and remove from front and back.   
+This can be very handy if you only add and drop at front or back, and don't need to grab value via index.  
+
 
 ## Challenge
 <!-- Description of the challenge -->
