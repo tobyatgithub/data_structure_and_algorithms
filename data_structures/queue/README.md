@@ -28,7 +28,7 @@ We also kept a size feature for the queue to make len() request O(1)
 | enqueue | O(1) | O(1) |
 | dequeue | O(1) | O(1) |
 | len() | O(1) | O(1) |
-| insert | O(1) | O(1) |
+| peek | O(1) | O(1) |
   
   
 
