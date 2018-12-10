@@ -37,10 +37,16 @@ def test_input_rasie():
     # assert TypeError("Stack only take <None> or a <list> as input init value")
 
 def test_singly_stack(single_stack):
-    assert single_stack
+    assert len(single_stack) == 1
+    single_stack.push(22)
+    assert len(single_stack) == 2
 
 def test_singly_stack2(single_stack):
     assert single_stack.peek().val == 2
+    assert len(single_stack) == 1
+
+def test_stack_length(empty_stack):
+    assert len(empty_stack) == 0
 
 def test_iterable_input_stack(long_stack):
     assert long_stack
@@ -49,8 +55,14 @@ def test_iterable_input_stack(long_stack):
 def test_stack_pop_empty(empty_stack):
     assert empty_stack.pop() == None
 
+
 def test_stack_pop1(single_stack):
+    # before
+    assert len(single_stack) == 1
     assert single_stack.pop().val == 2
+    #after
+    assert len(single_stack) == 0
+
 
 def test_stack_pop3(mid_stack):
     assert mid_stack.pop().val ==['6']
