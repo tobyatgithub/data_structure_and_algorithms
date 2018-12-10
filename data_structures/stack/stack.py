@@ -2,6 +2,8 @@ from node import Node
 
 class Stack(object):
     """
+    Stack is a classic data stucture built upon Node. It follows the FILO rule such that
+    the first input element shall be the last one out. Like a stack of books.
     """
 
     def __init__(self, iterable=[]):
@@ -36,6 +38,7 @@ class Stack(object):
         """
         This function takes any value as an argument and adds that
         value to the top of the stack with an O(1) Time performance
+        input: the element you want to pyt on the top of the stack (*)
         """
         new_top = Node(val)
         new_top._next = self.top
@@ -47,6 +50,7 @@ class Stack(object):
         """
         This function takes no arguments and removes / returns the
         Node at the top of the stack
+        output: the element at the top of the stack (Node or None)
         """
         output = self.top
 
@@ -68,6 +72,8 @@ class Stack(object):
 
     def peek(self):
         """
-        This function takes no arguments and returns the Node at the top of the stack
+        This function takes no arguments and returns the Node at the top of the stack.
+        Notice that, different from push, peek doesn't remove that element from the stack.
+        output: the element at the top of the stack (Node or None)
         """
         return self.top
