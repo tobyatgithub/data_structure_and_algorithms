@@ -15,9 +15,19 @@ def empty_shelter():
     return AnimalShelter()
 
 @pytest.fixture()
-def CCDD_shelter():
+def CD_shelter(Joe, Jimmy):
     tmp = AnimalShelter()
     tmp.enqueue(Joe)
+    tmp.enqueue(Jimmy)
+    return tmp
+
+@pytest.fixture()
+def mid_shelter(Joe, Jimmy):
+    # cat-cat-dog-cat-dog-dog
+    tmp = AnimalShelter()
+    tmp.enqueue(Joe)
+    tmp.enqueue(Joe)
+    tmp.enqueue(Jimmy)
     tmp.enqueue(Joe)
     tmp.enqueue(Jimmy)
     tmp.enqueue(Jimmy)
@@ -37,6 +47,23 @@ def test_shelter1(empty_shelter):
     assert empty_shelter.front == None
     assert empty_shelter.back == None
 
-# def test_shelter2(CCDD_shelter):
-#     import pdb; pdb.set_trace()
-#     assert CCDD_shelter.front.val.val == 'cat'
+def test_shelter2(CD_shelter):
+    assert CD_shelter.front.val.val == 'cat'
+
+def test_shelter3(CD_shelter):
+    assert CD_shelter.front._next.val.val == 'dog'
+
+def test_dequeue(mid_shelter, Joe, Jimmy):
+    tmp = mid_shelter.dequeue('cat')
+    assert tmp.val.val == Joe.val
+
+
+def test_dequeue2(mid_shelter, Joe, Jimmy):
+    # tmp = mid_shelter.dequeue('cat')
+    tmp = mid_shelter.dequeue('dog')
+    # import pdb; pdb.set_trace()
+    assert tmp.val.val == Jimmy.val
+
+def test_dequeue3(empty_shelter):
+    assert not empty_shelter.dequeue('cat')
+    assert not empty_shelter.dequeue('dog')

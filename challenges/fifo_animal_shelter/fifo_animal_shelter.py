@@ -1,10 +1,10 @@
 from .node import Node
 from queue import Queue
 
-# class dog(Node):
-class dog(object):
+class dog(Node):
+# class dog(object):
     def __init__(self, name=None, breed=None, color=None, favfood=None):
-        # Node.val = 'dog'
+        Node.val = 'dog'
         self.val = 'dog'
         self.name = name
         self.breed = breed
@@ -12,10 +12,10 @@ class dog(object):
         # self.favfood = favfood
         # return self
 
-class cat(object):
-# class cat(Node):
+# class cat(object):
+class cat(Node):
     def __init__(self, name=None, kind=None, color=None, favfood=None):
-        # Node.val = 'cat'
+        Node.val = 'cat'
         self.val = 'cat'
         self.name = name
         self.kind = kind
@@ -49,7 +49,8 @@ class AnimalShelter(object):
         a dog or a cat object.
         """
         new_node = Node(animal)
-        if (self.front is None) and (self.back is None):
+        if self.back is None:
+        # if (self.front is None) and (self.back is None):
             self.front = new_node
             self.back = new_node
 
@@ -58,7 +59,7 @@ class AnimalShelter(object):
             self.back = new_node
         self._size += 1
 
-    def dequeue(self, pref):
+    def dequeue(self, pref=None):
         """
         We gonna do dequeue by 5 steps -
         1. check single element case
@@ -69,7 +70,7 @@ class AnimalShelter(object):
         """
         self._size -= 1
         # 6. pref = None, or bad input
-        if (pref is None) or not ((pref.lower() == 'cat') or (pref.lower() == 'dog')):
+        if (pref is None) or (pref.lower() not in ['cat', 'dog']):
             # for now let's return None... just realized this will depends on queue condition as well..!
             print("Please specify whether you prefer cat of dog.")
             return None
@@ -80,17 +81,17 @@ class AnimalShelter(object):
             # return lucky
 
         # 5.1 if empty queue
-        if self.head is None:
+        if self.front is None:
             print("There's currently no animal in our shelter!")
             return None
 
         # 1. if single element queue
         if self._size == 1:
             # found
-            if self.head.val == pref.lower():
-                lukcy = self.head
+            if self.front.val == pref.lower():
+                lucky = self.front
                 # re_init the queue
-                self.head = None
+                self.front = None
                 self.back = None
                 return lucky
             # not found
@@ -101,30 +102,30 @@ class AnimalShelter(object):
 
         # more than one element in queue
         # 2. check the head, it's different from single element case because of tail.
-        if pref.lower() == self.head.val:
-            lucky = self.head
-            self.head = lucky._next
+        if pref.lower() == self.front.val.val:
+            lucky = self.front
+            self.front = lucky._next
             lucky._next = None
-            return lukcy
+            return lucky
 
         # 3. check the body, no head or tail re-wire will be required.
-        prev = self.head
-        current = self.head._next
-        future = self.head._next._next
+        prev = self.front
+        current = self.front._next
+        future = self.front._next._next
         while future: # this will lead us to the last node if not returned
             # check and return
-            if current.val == pref.lower():
+            if current.val.val == pref.lower():
                 lucky = current
                 prev._next =future
                 lucky._next = None
                 return lucky
             prev = current
-            ccurrent = future
+            current = future
             future = future._next
 
         # 4. check the tail, will get to this point if we didn't find preferred animal from
         # head, or body. now we check tail. Here current = self.tail., prev._next = current
-        if current.val == pref.lower():
+        if current.val.val == pref.lower():
             self.tail = prev
             prev._next = None
             return current
