@@ -11,7 +11,7 @@ def good_string2():
 
 @pytest.fixture()
 def good_string3():
-    return '[][]()(){}{}()'
+    return str('[][]()(){}{}()')
 
 @pytest.fixture()
 def bad_string1():
@@ -37,6 +37,9 @@ def test_good2(good_string2):
 
 def test_good3(good_string3):
     assert multi_bracket_validation(good_string3)
+
+def test_good4():
+    assert multi_bracket_validation("{[()]}")
 
 def test_bad1(bad_string1):
     assert not multi_bracket_validation(bad_string1)

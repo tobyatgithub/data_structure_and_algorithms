@@ -20,7 +20,6 @@ def multi_bracket_validation(input_string):
         raise(TypeError)
 
     open_Stack = Stack()
-    clos_Stack = Stack()
     open_samples = ['(','[','{']
     close_samples = [')',']','}']
     lookup = {
@@ -34,27 +33,52 @@ def multi_bracket_validation(input_string):
 
     # if input is empty, return True as default,
     if input_string:
-
-        # first, we collect each bracket into according stacks
         for i in input_string:
             if i in open_samples:
                 open_Stack.push(i)
-                continue
             if i in close_samples:
-                clos_Stack.push(i)
-                continue
-        # check if the stacks are in same length
-        if open_Stack._size != clos_Stack._size:
-            return False
-
-        # match tops one by one
-        for _ in range(open_Stack._size):
-            tmp_open = open_Stack.pop()
-            tmp_clos = clos_Stack.pop()
-            # import pdb; pdb.set_trace()
-            if lookup[tmp_clos.val] != lookup[tmp_open.val]:
-                return False
+                # we try to compare match
+                tmp_open = open_Stack.pop()
+                # if empty open_stack, direct False
+                if not tmp_open:
+                    return False
+                # if doesn't mach, return False
+                if lookup[i] != lookup[tmp_open.val]:
+                    return False
 
     return True
 
 
+
+
+
+
+
+
+
+
+
+    # clos_Stack = Stack()
+    # clos_Stack = []
+    #     # alright..this logic is a bit off..redo..
+    #     # first, we collect each bracket into according stacks
+    #     for i in input_string:
+    #         if i in open_samples:
+    #             open_Stack.push(i)
+    #         if i in close_samples:
+    #             clos_Stack.push(i)
+    #             # clos_Stack.append(i)
+    #     # check if the stacks are in same length
+    #     if open_Stack._size != len(clos_Stack):
+    #         return False
+
+    #     # import pdb; pdb.set_trace()
+    #     # match tops one by one
+    #     for _ in range(open_Stack._size):
+    #         tmp_open = open_Stack.pop().val
+    #         tmp_clos = clos_Stack.pop().val
+    #         # tmp_clos = clos_Stack.pop(-1)
+    #         if lookup[tmp_clos] != lookup[tmp_open]:
+    #             return False
+
+    # return True
