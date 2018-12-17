@@ -6,7 +6,8 @@ sys.path.append('/Users/toby/Documents/seattle-python-401d10/data_structure_and_
 from linked_list import linked_list
 from node import Node
 
-@pytest.fixture(scope = "function")
+# @pytest.fixture(scope = "function")
+@pytest.fixture()
 def empty_ll1():
     return linked_list()
 
