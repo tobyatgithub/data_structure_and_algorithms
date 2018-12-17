@@ -1,3 +1,5 @@
+import collections
+
 class Node:
     def __init__(self, val):
         self.val = val
@@ -18,8 +20,11 @@ class BST:
         self.root = None
 
         if iterable:
-            for i in iterable:
-                self.insert(i)
+            if isinstance(iterable, collections.Iterable):
+                for i in iterable:
+                    self.insert(i)
+            else:
+                raise TypeError(f'BST shall take None or Iterable value as input, { iterable } given')
 
 
     def __str__(self):

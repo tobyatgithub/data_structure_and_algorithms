@@ -1,3 +1,4 @@
+import pytest
 from .bst import BST, Node
 
 
@@ -13,6 +14,9 @@ def test_printTree():
     # import pdb; pdb.set_trace()
     assert str(tmp) == 'This is a binay search tree with root = 1'
 
+def test_badinput():
+    with pytest.raises(TypeError):
+        BST(22)
 
 def test_insert1():
     tmp = BST()
