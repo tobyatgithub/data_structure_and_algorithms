@@ -18,4 +18,4 @@ Big O space for this is O(max width of any level) as we only use a 'queue' and s
 
 ## Solution
 <!-- Embedded whiteboard image -->
-![breadth_first_search]()
+![breadth_first_search](https://github.com/tobyatgithub/data_structure_and_algorithms/blob/master/assets/breadth_first_search.jpeg)
