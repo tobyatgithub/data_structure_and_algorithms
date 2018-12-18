@@ -1,5 +1,5 @@
 import pytest
-from ll_merge import mergeLists
+from .ll_merge import mergeLists
 
 import sys
 sys.path.append('/Users/toby/Documents/seattle-python-401d10/data_structure_and_algorithms/data_structures/linked_list')
