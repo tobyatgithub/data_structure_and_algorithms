@@ -32,7 +32,8 @@ class BST:
         return out
 
     def __repr__(self):
-        return f'This is a binay search tree with root = { self.root.val }'
+        out = f'This is a binay search tree with root = { self.root.val }'
+        return out
 
     def insert(self, val):
         """
@@ -88,3 +89,29 @@ class BST:
             print(root.val)
             if root.right:
                 self.inOrder(root.right)
+
+    def find_maximum_value(self):
+        """
+        this function takes in a binary tree as input, and return
+        the maximum value within the tree as output.
+        There are two ways of doing that, one is modify the tree class such that
+        we add one .max_val to the self. And modifying the insert process accordingly.
+        The other one is to use any kind of traverse to visit every single node in
+        the tree, and find out the one with maximum value
+        """
+
+        if self.root:
+            max_val = self.root.val
+            store = [self.root]
+            while len(store) > 0:
+                cur = store.pop(0)
+                if cur.val > max_val:
+                    max_val = cur.val
+                if cur.right:
+                    store.append(cur.right)
+                if cur.left:
+                    store.append(cur.left)
+            return max_val
+
+        print("Empty tree has no maximum value")
+        return None
