@@ -84,3 +84,16 @@ def test_postOrder2(capsys):
     captured = capsys.readouterr()
     # import pdb; pdb.set_trace()
     assert captured.out == '1\n'
+
+
+def test_find_max1():
+    tmp = BST()
+    assert tmp.find_maximum_value() == None
+
+def test_find_max2():
+    tmp = BST([1])
+    assert tmp.find_maximum_value() == 1
+
+def test_find_max3():
+    tmp = BST([20, 18, 12, 19, 11, 14, 40, 31, 22, 33])
+    assert tmp.find_maximum_value() == 40
