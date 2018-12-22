@@ -2,9 +2,27 @@
 class Graph:
     """
     """
-    def __init__(self):
+    def __init__(self, iterable = {}):
+        """
+        For here iterable only takes in vertices and weighted edges.
+        Right now it only support format as:
+        Graph({
+            'A': {'B': 10},
+            'B': {'A': 5, 'D': 15, 'C': 20},
+            })
+        """
+        import collections
         self.graph = {}
         self._size = 0
+        # if isinstance(iterable, collections.Iterable):
+        if isinstance(iterable, dict):
+            for v1 in iterable.keys():
+                self.add_vert(v1)
+
+            for v1 in iterable.keys():
+                for v2, weight in iterable[v1].items():
+                    self.add_edge(v1, v2, weight)
+
 
     def __repr__(self):
         if self._size == 0:

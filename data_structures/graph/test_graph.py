@@ -117,3 +117,19 @@ def test_get_neightbor2(graph_one):
 
 def test_get_neightbor3(graph_two):
     assert graph_two.get_neighbors('B') == {'D': 15, 'E': 5, 'C': 2}
+
+
+def test_init_with_iterable():
+    test_dict = {
+        'A': {'B': 10},
+        'B': {'A': 5, 'D': 15, 'C': 20},
+        'C': {'E': 1},
+        'D': {'A': 5},
+        'E': {'F': 2, 'B': 4},
+        'F': {'D': 11}
+    }
+    test_graph = Graph(test_dict)
+    assert test_graph
+    assert test_graph.has_vert("A")
+    assert test_graph.get_neighbors("C") == {'E': 1}
+    assert len(test_graph) == 6
