@@ -1,7 +1,12 @@
 
 class Graph:
     """
+    Here we implement the famous data structure--graph.
+    It's a data structure made up by nodes and edges.
+    Generally tehre's no limitation on number of nodes, and number of edges.
+    Edges can also be weighted or non-weighted.
     """
+
     def __init__(self, iterable = {}):
         """
         For here iterable only takes in vertices and weighted edges.
@@ -11,7 +16,7 @@ class Graph:
             'B': {'A': 5, 'D': 15, 'C': 20},
             })
         """
-        import collections
+        # import collections
         self.graph = {}
         self._size = 0
         # if isinstance(iterable, collections.Iterable):
@@ -22,7 +27,6 @@ class Graph:
             for v1 in iterable.keys():
                 for v2, weight in iterable[v1].items():
                     self.add_edge(v1, v2, weight)
-
 
     def __repr__(self):
         if self._size == 0:
@@ -74,7 +78,6 @@ class Graph:
         v1_edges = self.graph[v1]
         v1_edges[v2] = weight
         return self
-
 
     def get_neighbors(self, val):
         """

@@ -42,15 +42,18 @@ def graph_two():
 def test_graph_class_exist(graph_empty):
     assert not graph_empty
 
+
 def test_pring(capsys, graph_empty):
     print(graph_empty)
     captured = capsys.readouterr()
     assert captured.out == "This is an empty graph.\n"
 
+
 def test_print2(capsys, graph_one):
     print(graph_one)
     captured = capsys.readouterr()
     assert captured.out == f'This is a graph with {graph_one._size} nodes : {graph_one.graph.keys()}\n'
+
 
 def test_has_vert1(graph_empty):
     assert not graph_empty.has_vert(1)
