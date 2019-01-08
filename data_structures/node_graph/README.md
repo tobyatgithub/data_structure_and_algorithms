@@ -16,6 +16,7 @@ In this repository, I implement a breadth-first search of a a graph class based 
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+![](https://github.com/tobyatgithub/data_structure_and_algorithms/blob/master/assets/breadth_first_search_whiteboard.jpeg)
 For breadth first search, we only visit each node once (which is nice.)
 
 | Function | Big O Time | Big O Space |
