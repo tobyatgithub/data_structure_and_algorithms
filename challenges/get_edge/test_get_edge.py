@@ -47,6 +47,12 @@ def test_get_edge4(small_graph):
     cities = ["Seattle", "Seattle"]
     assert (False, 0) == get_edge(small_graph, cities)
 
+
 def test_get_edge5(small_graph):
     cities = ["Seattle"]
     assert (False, 0) == get_edge(small_graph, cities)
+
+
+def test_get_edge6(small_graph):
+    cities = ["Seattle", "Chicago", "Rochester", "New York City"]
+    assert (True, 292) == get_edge(small_graph, cities)
