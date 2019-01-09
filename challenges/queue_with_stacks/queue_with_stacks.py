@@ -1,10 +1,10 @@
-import sys
-# import via absolute directory.
-sys.path.append('/Users/toby/Documents/seattle-python-401d10/'
-'data_structure_and_algorithms/data_structures/stack')
+# import sys
+# # import via absolute directory.
+# sys.path.append('/Users/toby/Documents/seattle-python-401d10/'
+# 'data_structure_and_algorithms/data_structures/stack')
 
-from stack import Stack
-
+# from stack import Stack
+from ...data_structures.stack.stack import Stack
 
 class PseudoQueue(object):
     """

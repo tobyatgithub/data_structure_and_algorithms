@@ -1,4 +1,4 @@
-from node_graph import Vertex, graph
+from .node_graph import Vertex, graph
 import pytest
 
 

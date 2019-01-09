@@ -68,6 +68,14 @@ class graph:
             self.addVertex(t)
         self.vertices[f].addNeighbor(t, weight)
 
+    def addTwoWayEdges(self, f, t, weight=0):
+        if f not in self.vertices:
+            self.addVertex(f)
+        if t not in self.vertices:
+            self.addVertex(t)
+        self.vertices[f].addNeighbor(t, weight)
+        self.vertices[t].addNeighbor(f, weight)
+
     def getVertices(self):
         return self.vertices
 
