@@ -1,7 +1,8 @@
 class HashTable:
     def __init__(self, size=11):
         self.size = size  # number of buckets
-        self.table = {}
+        self.table = [None] * size
+        # self.keys = [None] * size
         # usually we would like size to be a prime number
         #  to reduce chance of data collision
 
