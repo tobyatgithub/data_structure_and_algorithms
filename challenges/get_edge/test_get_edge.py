@@ -6,11 +6,6 @@ import pytest
 @pytest.fixture()
 def small_graph():
     tmp = graph()
-    # tmp.addVertex("Seattle")
-    # tmp.addVertex("Boston")
-    # tmp.addVertex("New York City")
-    # tmp.addVertex("Rochester")
-    # tmp.addVertex("Chicago")
     tmp.addTwoWayEdges("Seattle", "Boston", 224)
     tmp.addTwoWayEdges("Seattle", "Chicago", 73)
     tmp.addTwoWayEdges("Seattle", "New York City", 196)
