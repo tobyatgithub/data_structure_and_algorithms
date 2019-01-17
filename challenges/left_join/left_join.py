@@ -4,7 +4,9 @@ two hash table inputs.
 """
 
 
-def left_join(hash1, hash2):
+def left_join(hash1, hash2, method='left'):
+    if method == 'right':
+        hash1, hash2 = hash2, hash1
     out = []
     for buckets in hash1.hashtable:
         for items in buckets:

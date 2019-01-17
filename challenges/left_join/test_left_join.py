@@ -53,6 +53,23 @@ def test_left_merge2(hashtable1):
     assert ['outfit', 'grab', 'None'] in tmp
 
 
-def test_left_merge2(hashtable2):
+def test_left_merge3(hashtable2):
     tmp = left_join(HashTable(), hashtable2)
     assert not tmp
+
+
+def test_right_merge1(hashtable1, hashtable2):
+    tmp = left_join(hashtable1, hashtable2, method='right')
+    assert ['wrath', 'delight', 'anger'] in tmp
+    assert ['flow', 'jam', 'None'] in tmp
+
+
+def test_right_merge2(hashtable1):
+    tmp = left_join(hashtable1, HashTable(), method='right')
+    assert not tmp
+
+
+def test_right_merge3(hashtable2):
+    tmp = left_join(HashTable(), hashtable2, method='right')
+    assert ['wrath', 'delight', 'None'] in tmp
+    assert ['flow', 'jam', 'None'] in tmp
