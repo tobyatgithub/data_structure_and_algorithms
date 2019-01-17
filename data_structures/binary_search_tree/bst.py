@@ -1,5 +1,6 @@
 import collections
 
+
 class Node:
     def __init__(self, val):
         self.val = val
@@ -15,8 +16,9 @@ class Node:
         f'and right = { self.right }'
         return out
 
+
 class BST:
-    def __init__(self, iterable = []):
+    def __init__(self, iterable=[]):
         self.root = None
 
         if iterable:
@@ -39,7 +41,7 @@ class BST:
         """
         """
 
-        if self.root == None:
+        if self.root is None:
             self.root = Node(val)
         else:
             current = self.root
@@ -60,35 +62,30 @@ class BST:
                 else:
                     break
 
-    def preOrder(self, root):
+    def preOrder(self, root, methodToRun=print):
         """
         """
         if root:
-            print(root.val)
+            methodToRun(root.val)
             self.preOrder(root.left)
             self.preOrder(root.right)
 
-    def postOrder(self, root):
+    def postOrder(self, root, methodToRun=print):
         """post order = visit the current node after its child nodes"""
-        if root:# if current node not empty
-            #1. check left child exist, if so, go to it
-            if root.left:
-                self.postOrder(root.left)
-            #2. if left child finished, check right child
-            if root.right:
-                self.postOrder(root.right)
-            #3. if both finished, print self.
-            print(root.val)
+        if root:  # if current node not empty
+            # 1. check left child exist, if so, go to it
+            self.postOrder(root.left)
+            # 2. if left child finished, check right child
+            self.postOrder(root.right)
+            # 3. if both finished, print self.
+            methodToRun(root.val)
 
-    def inOrder(self, root):
+    def inOrder(self, root, methodToRun=print):
         """in order = print left, node, then right"""
         if root:
-            if root.left:
-                self.inOrder(root.left)
-
-            print(root.val)
-            if root.right:
-                self.inOrder(root.right)
+            self.inOrder(root.left)
+            methodToRun(root.val)
+            self.inOrder(root.right)
 
     def find_maximum_value(self):
         """
