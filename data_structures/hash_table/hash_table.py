@@ -1,9 +1,13 @@
 class HashTable:
     """
-    A class for a hash table.
+    A class for a hash table. We solve data coliision here by inforcing
+    unique key. If a same key is passed in, it will replace the previous one.
+    The default size is 17 so as easy to debug, but is subject to change as
+    one input variable.
+    Noitce that we only take in str as key.
     """
 
-    def __init__(self, size=8192):
+    def __init__(self, size=17):
         self.entries_count = 0
         self.alphabet_size = 52
         self.table_size = size
@@ -15,24 +19,28 @@ class HashTable:
         return "<HashTable: {}>".format(self.hashtable)
 
     def __len__(self):
-        count = 0
-        for item in self.hashtable:
-            count += len(item)
-        return count
+        return self.entries_count
 
     def _hash_key(self, key):
         """
-        takes in string key and turn that into a hash result
+        Takes in string key and turn that into a hash result.
+        input: key (str)
+        output: hash value (int)
         """
+        if len(key) == 0:
+            return 0
         _key = ''.join(str(ord(c)) for c in key)
         return int(_key) % self.table_size
 
     def put(self, key, value):
         """
-        Add a key and value into the hash table
+        Add a key and value into the hash table.
+        input: key(str), value(*)
+        output: None
         """
         if not isinstance(key, str):
             raise TypeError("Only strings can be used as keys")
+
         hash_ = self._hash_key(key)
         for i, item in enumerate(self.hashtable[hash_]):
             if item[0] == key:
@@ -44,6 +52,8 @@ class HashTable:
     def get(self, key):
         """
         Retrieve a value from the hash table by key.
+        input: key (str)
+        output: associated value (*)
         """
         hash_ = self._hash_key(key)
         for i, item in enumerate(self.hashtable[hash_]):
