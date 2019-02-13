@@ -9,13 +9,13 @@
 This is the root repository for all the data structure and algorithm challenge realated content. All structure and challenge require implement without utilizing any of the built-in methods available. Any functionality that you write shall be tested.
 
 Contents:
-1. [Array Shift](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/challenges/array_shift):  
+1. [Array Shift](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/challenges/array_shift):
 Write a function that takes in an array and the value to be added. Return an array with the new value added at the middle index.
 
-2. Binary Search:  
+2. Binary Search:
 Write a function that takes in 2 paramters: a sorted array and the search key. Return the index of the array's element that is equal to the search key, or -1 if the element does not exist.
 
-3. [Data Structure] [Linked List](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/data_structures/linked_list):  
+3. [Data Structure] [Linked List](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/data_structures/linked_list):
 * Create a class for a **Node** which is aware of the value as "val" and next as "_next".
 * Create a class for **LinkedList** which creates an empty Linked List with None assigned to head when instantiated.
 * The LinkedList class shall be aware of the length of the linked list.
@@ -27,10 +27,10 @@ Write a function that takes in 2 paramters: a sorted array and the search key. R
 * Write .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first node whose val == value input.
 * Write .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first node whose val == value input.
 
-4. [linked list kth from end](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/data_structures/linked_list):  
+4. [linked list kth from end](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/data_structures/linked_list):
 Write a method of Linked List class which takes in a number k. Return the node's value that is k from the end of the linked list. Return None if impossible.
 
-5. [linked list merge](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/challenges/ll_merge):  
+5. [linked list merge](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/challenges/ll_merge):
 Write a function that takes in two linked list as arguments, zip the two linked lists into one such that the nodes alternate between the two lists and return a reference to the head of the zipped list. Keep space complexity to O(1).
 
 6. [Data Structure] [Stack](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/data_structures/stack) and [Queue](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/data_structures/queue):
@@ -48,7 +48,7 @@ Write a function that takes in two linked list as arguments, zip the two linked 
 * Define a method called **enqueue** which takes any value as an argument and adds that value to the back of the queue with O(1) time complexity.
 * Define a method called **dequeue** which takes no argument, removes and returns the Node at the front of the queue.
 
-7. [queue with stacks](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/challenges/queue_with_stacks):  
+7. [queue with stacks](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/challenges/queue_with_stacks):
 Write a function that only uses stack to realize functionality of a queue. You shall only use no more than "push", "pop", and "peek" methods in your stack class.
 
 8. [fifo animal shelter](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/challenges/fifo_animal_shelter):
@@ -56,7 +56,22 @@ Write a function that only uses stack to realize functionality of a queue. You s
 * Implement an **enqueue(animal)** method that adds animal to the shelter. Animal can be either a dog or a cat object.
 * Implement an **dequeue(pref)** method that returns either a dog or a cat. Return None if no pref specified. (Stretch: if no pref specified, return whichever animal that has been waiting in the shelter for the longest time.)
 
-9. multi bracket validation
+9. [multi bracket validation](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/challenges/multi_bracket_validation):
+Write a function such that it takes in a string and return a boolean as whether the brackets in the string are balanced. There are three types of brackets, any may contain characters in between.
+
+10. [FizzBuzzTree](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/challenges/fizz_buzz_tree):
+Write a function that takes in a tree of integers as argument. Change the content of the tree as if the value of node is divisible by 3, replace the value with "Fizz"; if divisible by 5, replace the value with "Buzz"; if divisible by 3 and 5, replace the value with "FizzBuzz". Return the tree with its new values.
+
+11. [Breadth First Search](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/challenges/breadth_first_traversal):
+Write a breadth first traversal that takes in a binary tree as input, traverse the input tree using breadth first approach, print every visited node's value.
+
+12. [Find max value in a binary tree]():
+Write a function that takes binary tree (with all numerical values) as input, and return the maximum value stored in the tree.
+
+
+
+
+
 
 
 ## Getting Started
