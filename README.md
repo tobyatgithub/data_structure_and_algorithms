@@ -9,11 +9,13 @@
 This is the root repository for all the data structure and algorithm challenge realated content. All structure and challenge require implement without utilizing any of the built-in methods available. Any functionality that you write shall be tested.
 
 Contents:
-1. [Array Shift](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/challenges/array_shift): Write a function that takes in an array and the value to be added. Return an array with the new value added at the middle index.
+1. [Array Shift](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/challenges/array_shift):  
+Write a function that takes in an array and the value to be added. Return an array with the new value added at the middle index.
 
-2. Binary Search: Write a function that takes in 2 paramters: a sorted array and the search key. Return the index of the array's element that is equal to the search key, or -1 if the element does not exist.
+2. Binary Search:  
+Write a function that takes in 2 paramters: a sorted array and the search key. Return the index of the array's element that is equal to the search key, or -1 if the element does not exist.
 
-3. [Data Structure] [Linked List](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/data_structures/linked_list):
+3. [Data Structure] [Linked List](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/data_structures/linked_list):  
 * Create a class for a **Node** which is aware of the value as "val" and next as "_next".
 * Create a class for **LinkedList** which creates an empty Linked List with None assigned to head when instantiated.
 * The LinkedList class shall be aware of the length of the linked list.
@@ -25,9 +27,11 @@ Contents:
 * Write .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first node whose val == value input.
 * Write .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first node whose val == value input.
 
-4. [linked list kth from end](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/data_structures/linked_list): Write a method of Linked List class which takes in a number k. Return the node's value that is k from the end of the linked list. Return None if impossible.
+4. [linked list kth from end](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/data_structures/linked_list):  
+Write a method of Linked List class which takes in a number k. Return the node's value that is k from the end of the linked list. Return None if impossible.
 
-5. [linked list merge](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/challenges/ll_merge): Write a function that takes in two linked list as arguments, zip the two linked lists into one such that the nodes alternate between the two lists and return a reference to the head of the zipped list. Keep space complexity to O(1).
+5. [linked list merge](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/challenges/ll_merge):  
+Write a function that takes in two linked list as arguments, zip the two linked lists into one such that the nodes alternate between the two lists and return a reference to the head of the zipped list. Keep space complexity to O(1).
 
 6. [Data Structure] [Stack](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/data_structures/stack) and [Queue](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/data_structures/queue):
 * Use the Node class from previous, create a class for **stack** which shall be aware of a default None value assigned to top when instantiated.
@@ -44,7 +48,8 @@ Contents:
 * Define a method called **enqueue** which takes any value as an argument and adds that value to the back of the queue with O(1) time complexity.
 * Define a method called **dequeue** which takes no argument, removes and returns the Node at the front of the queue.
 
-7. [queue with stacks](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/challenges/queue_with_stacks): Write a function that only uses stack to realize functionality of a queue. You shall only use no more than "push", "pop", and "peek" methods in your stack class.
+7. [queue with stacks](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/challenges/queue_with_stacks):  
+Write a function that only uses stack to realize functionality of a queue. You shall only use no more than "push", "pop", and "peek" methods in your stack class.
 
 8. [fifo animal shelter](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/challenges/fifo_animal_shelter):
 * Create a class called **AnimalShelter** which holds only dogs and cats. The shelter operates using a first-in, first-out approach.
