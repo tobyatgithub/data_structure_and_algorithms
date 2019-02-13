@@ -56,16 +56,16 @@ Write a function that only uses stack to realize functionality of a queue. You s
 * Implement an **enqueue(animal)** method that adds animal to the shelter. Animal can be either a dog or a cat object.
 * Implement an **dequeue(pref)** method that returns either a dog or a cat. Return None if no pref specified. (Stretch: if no pref specified, return whichever animal that has been waiting in the shelter for the longest time.)
 
-9. [multi bracket validation](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/challenges/multi_bracket_validation):
+9. [multi bracket validation](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/challenges/multi_bracket_validation):  
 Write a function such that it takes in a string and return a boolean as whether the brackets in the string are balanced. There are three types of brackets, any may contain characters in between.
 
-10. [FizzBuzzTree](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/challenges/fizz_buzz_tree):
+10. [FizzBuzzTree](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/challenges/fizz_buzz_tree):  
 Write a function that takes in a tree of integers as argument. Change the content of the tree as if the value of node is divisible by 3, replace the value with "Fizz"; if divisible by 5, replace the value with "Buzz"; if divisible by 3 and 5, replace the value with "FizzBuzz". Return the tree with its new values.
 
-11. [Breadth First Search](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/challenges/breadth_first_traversal):
+11. [Breadth First Search](https://github.com/tobyatgithub/data_structure_and_algorithms/tree/master/challenges/breadth_first_traversal):  
 Write a breadth first traversal that takes in a binary tree as input, traverse the input tree using breadth first approach, print every visited node's value.
 
-12. [Find max value in a binary tree]():
+12. [Find max value in a binary tree]():  
 Write a function that takes binary tree (with all numerical values) as input, and return the maximum value stored in the tree.
 
 
